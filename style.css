@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    /* Primary */
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+}
+
+main {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 25px 25px 145px 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 84%;
+}
+
+label {
+    font-size: 0.9rem;
+    color: var(--smokey-grey);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input {
+    width: 100px;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease;
+    cursor: pointer;
+}
+
+input:focus {
+    border-color: var(--purple);
+}
+
+
+hr{
+    width: 100%;
+    border: 1px solid var(--light-grey);
+}
+
+.button-line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Button styling */
+button {
+    background-color: var(--purple);
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+button img {
+    width: 30px;
+}
+
+button:hover {
+    background-color: var(--off-black);
+}
+
+/* Results section */
+#results {
+    font-style: italic;
+    text-align: left;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--off-black);
+    margin-top: 1.5rem;
+}
+
+#results div {
+    margin: 0.5rem 0;
+    opacity: 1;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* When results are updated, make them visible */
+#results.show div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+span{
+    color: var(--purple);
+}
+
+
+/* to hide arrows on input fields */
+.no-arrows {
+    -moz-appearance: textfield; /* For Firefox */
+    -webkit-appearance: none; /* For Safari and Chrome */
+    appearance: none; /* Standard property */
+}
+
+
+.no-arrows::-webkit-inner-spin-button,
+.no-arrows::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+::placeholder{
+    font-weight: 800;
+    color: var(--smokey-grey);
+}
+
+
+.error-message{
+    display: flex;
+    color: var(--light-red);
+    font-size: 0.6rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Default styles */
+
+  
+  /* Error state styles */
+  .date-field input.error {
+    border: 1px solid var(--light-red);
+    background-color: #ffe6e6;
+  }
+  
+  .date-field label.error {
+    color: var(--light-red);
+    font-weight: bold;
+  }
+  
+  /* Error message styles */
+  .error-message {
+    color: var(--light-red);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+
+
+/* Responsive Design */
+@media (max-width: 375px) {
+    main {
+        padding: 1.5rem;
+        max-width: 90%;
+        height: 500px;
+        display: flex;
+        border-radius: 25px 25px 85px 25px;
+        flex-direction: column;
+    }
+
+
+
+    label{
+        font-size: 0.8rem;
+
+    }
+
+
+    input {
+        font-size: 1rem;
+        padding: 0.4rem;
+        width: 80px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    hr{
+        position: absolute;
+        width: 70%;
+
+    }
+
+
+    button {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .button-line{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    
+    #results {
+        margin-top: 4rem;
+        font-size: 2.5rem;
+    }
+}
+
+
